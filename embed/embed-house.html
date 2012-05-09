@@ -1,0 +1,15 @@
+
+<div id="map-div-house" style="width:800px;height:600px;"></div>
+<div id="credits">
+    <p>By <a href="http://kevinschaul.com/">Kevin Schaul</a>.
+    <p>Data courtesy <a href="http://minnpost.com/">MinnPost</a>.
+    <p>Colors by <a href="https://twitter.com/#!/katiekissel">Katie Kissel</a>.
+</div>
+<style type="text/css">.wax-tooltip{position:absolute;right:10px;top:10px;padding:10px;background-color:#FFFFFF;opacity:0.8;border-radius:3px;-moz-border-radius:3px;min-width:120px;z-index:1020;}</style>
+<link href="http://www.kevinschaul.com/projects/vikings-bill-voters/lib/leaflet/leaflet.css" rel="stylesheet">
+<script type="text/javascript" src="http://www.kevinschaul.com/projects/vikings-bill-voters/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.kevinschaul.com/projects/vikings-bill-voters/lib/leaflet/leaflet.js"></script>
+	<script type="text/javascript" src="http://www.kevinschaul.com/projects/vikings-bill-voters/lib/wax/wax.leaf.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){wax.tilejson('http://schaul.s3.amazonaws.com/maps/vikings_bill/house/vikings_bill_house.json',function(tilejson) {var map=new L.Map('map-div-house').addLayer(new wax.leaf.connector(tilejson)).setView(new L.LatLng(46.3,-94.2),7);varinteraction=wax.leaf.interaction().map(map).tilejson(tilejson).on(wax.tooltip().parent(map._container).events());});});
+</script>
