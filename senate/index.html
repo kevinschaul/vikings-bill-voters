@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vikings stadium bill results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+    #map-div {
+        height: 600px;
+    }
+    .wax-tooltip {
+        position:absolute;
+        right: 10px;
+        top: 10px;
+        padding: 10px;
+        background-color: #FFFFFF;
+        opacity: 0.8;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        min-width: 120px;
+        z-index: 1020;
+    }
+    </style>
+    <link href="../lib/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link href="../lib/leaflet/leaflet.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="http://kevinschaul.com">KevinSchaul.com</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="#">House</a></li>
+              <li class="active"><a href="http://kevinschaul.com/projects/vikings-bill-voters/senate">Senate</a></li>
+              <li><a href="http://github.com/kevinschaul">View code on GitHub</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<div class="row">
+	<div class="span9">
+      <h1>Senate</h1>
+      <p>Purple indicates a "yes" vote.<br>Yellow indicates a "no" vote.<br>Grey indicates an abstention.</p>
+	</div>
+	<div class="span3">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Who voted for the #Vikings stadium bills?" data-via="kevinschaul" data-related="kevinschaul" data-hashtags="mnleg">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+
+<div class="row">
+	<div class="span12">
+		<div id="map-div"></div>
+		<p>Data courtesy the <a href="http://www.startribune.com/politics/statelocal/150720265.html">Star Tribune</a>.
+	</div>
+</div>
+
+    </div> <!-- /container -->
+
+    <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/leaflet/leaflet.js"></script>
+	<script type="text/javascript" src="../lib/wax/wax.leaf.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function() {
+    wax.tilejson('http://schaul.s3.amazonaws.com/maps/vikings_bill/senate/vikings_bill_senate.json',
+        function(tilejson) {
+            var map = new L.Map('map-div')
+                .addLayer(new wax.leaf.connector(tilejson))
+                .setView(new L.LatLng(46.3, -94.2), 7);
+            var interaction = wax.leaf.interaction()
+                .map(map)
+                .tilejson(tilejson)
+                .on(wax.tooltip().parent(map._container).events());
+    });
+});
+</script>
+
+  </body>
+</html>
