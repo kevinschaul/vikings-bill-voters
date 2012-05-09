@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+*.swp
+
+project_dirs.py
+tiles*
