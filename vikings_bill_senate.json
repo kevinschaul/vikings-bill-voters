@@ -21,10 +21,10 @@ grid({
     "template": "{{#__location__}}{{/__location__}}{{#__teaser__}}<div id='tooltip'><div id='vote'>{{{Vote}}}</div><div id='rep-name'>{{{Fname}}} {{{Lname}}} ({{{Party}}})</div><div id='district'>District {{{DISTRICT}}}</div></div>{{/__teaser__}}{{#__full__}}{{/__full__}}",
     "legend": "",
     "grids": [
-        "https://s3.amazonaws.com/schaul/maps/vikings_bill/senate/0.3/Vikings bill - senate/{z}/{x}/{y}.grid.json"
+        "https://s3.amazonaws.com/schaul/maps/vikings_bill/senate/1.0/Vikings bill - senate/{z}/{x}/{y}.grid.json"
     ],
     "tiles": [
-        "https://s3.amazonaws.com/schaul/maps/vikings_bill/senate/0.3/Vikings bill - senate/{z}/{x}/{y}.png"
+        "https://s3.amazonaws.com/schaul/maps/vikings_bill/senate/1.0/Vikings bill - senate/{z}/{x}/{y}.png"
     ],
     "download": "http://www.kevinschaul.com",
     "webpage": "http://www.kevinschaul.com"
