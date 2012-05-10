@@ -21,7 +21,7 @@ except IOError:
 
 # #
 # When making changes, update this and in map/data/{MAPS_LIST}.json
-VERSION = '0.2'
+VERSION = '1.0'
 
 # #
 # Functions
