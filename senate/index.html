@@ -41,6 +41,15 @@
 
   <body>
 
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -71,6 +80,7 @@
 	<div class="span3">
         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.kevinschaul.com/projects/vikings-bill-voters/house/" data-text="Map: Who voted for the #Vikings bills?" data-via="kevinschaul" data-related="kevinschaul" data-hashtags="mnleg">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div class="fb-like" data-href="http://www.kevinschaul.com/projects/vikings-bill-voters/house/" data-send="false" data-width="100" data-show-faces="false"></div>
 	</div>
 
 <div class="row">
